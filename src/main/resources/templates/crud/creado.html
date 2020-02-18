@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<title>Usuario Creado</title>
+</head>
+<body>
+
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<h3>Usuario creado con exito</h3>
+		</div>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>NOMBRE</th>
+					<th>CONTRASEÑA</th>
+					<th>CORREO ELECTRONICO</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td data-th-text="${usuario.id}"></td>
+					<td data-th-text="${usuario.nombre}"></td>
+					<td data-th-text="${usuario.password}"></td>
+					<td data-th-text="${usuario.email}"></td>
+				</tr>
+			</tbody>
+
+		</table>
+
+
+	</div>
+
+</body>
+</html>

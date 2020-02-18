@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+<title>Listar</title>
+</head>
+<body>
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<h3>Lista de usuarios</h3>
+		</div>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>NOMBRE</th>
+					<th>CONTRASEÑA</th>
+					<th>CORREO ELECTRONICO</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-th-each="usuario:${usuarios}">
+					<td data-th-text="${usuario.id}"></td>
+					<td data-th-text="${usuario.nombre}"></td>
+					<td data-th-text="${usuario.password}"></td>
+					<td data-th-text="${usuario.email}"></td>
+				</tr>
+			</tbody>
+		</table>
+		<br />
+		<a class="btn btn-info" href="nuevo">Nuevo Usuario</a>
+	</div>
+
+</body>
+</html>
