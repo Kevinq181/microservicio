@@ -1,0 +1,10 @@
+a.btn.btn-info {
+    margin: auto;
+    display: block;
+}
+
+button.btn.btn-info{
+    margin: auto;
+    display: block;
+    width: 100%;
+}

@@ -1,41 +1,44 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<script
-	src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<title>Usuario Creado</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet"
+		  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+	<link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+	<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<title>Usuario Creado</title>
 </head>
 <body>
 
-	<div class="panel panel-info">
-		<div class="panel-heading">
-			<h3>Usuario creado con exito</h3>
-		</div>
-		<table class="table table-striped">
-			<thead>
-				<tr>
-					<th>ID</th>
-					<th>NOMBRE</th>
-					<th>CONTRASEÑA</th>
-					<th>CORREO ELECTRONICO</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td data-th-text="${usuario.id}"></td>
-					<td data-th-text="${usuario.nombre}"></td>
-					<td data-th-text="${usuario.password}"></td>
-					<td data-th-text="${usuario.email}"></td>
-				</tr>
-			</tbody>
-
-		</table>
-
-
+<div class="panel panel-info">
+	<div class="jumbotron text-center">
+		<h2>Guardado con exito</h2>
 	</div>
+	<table class="table table-striped">
+		<thead>
+		<tr>
+			<th>ID</th>
+			<th>NOMBRE</th>
+			<th>NÚMERO TELEFÓNICO</th>
+			<th>CORREO ELECTRONICO</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td data-th-text="${usuario.id}"></td>
+			<td data-th-text="${usuario.nombre}"></td>
+			<td data-th-text="${usuario.password}"></td>
+			<td data-th-text="${usuario.email}"></td>
+		</tr>
+		</tbody>
+
+	</table>
+	<br />
+	<a class="btn btn-info" href="volver">Volver</a>
+
+</div>
 
 </body>
 </html>

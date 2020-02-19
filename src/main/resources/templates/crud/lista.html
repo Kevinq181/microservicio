@@ -1,40 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<script
-	src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet"
+		  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
-<title>Listar</title>
+	<link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+	<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+	<title>Listar</title>
 </head>
 <body>
-	<div class="panel panel-info">
-		<div class="panel-heading">
-			<h3>Lista de usuarios</h3>
-		</div>
-		<table class="table table-striped">
-			<thead>
-				<tr>
-					<th>ID</th>
-					<th>NOMBRE</th>
-					<th>CONTRASEÑA</th>
-					<th>CORREO ELECTRONICO</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr data-th-each="usuario:${usuarios}">
-					<td data-th-text="${usuario.id}"></td>
-					<td data-th-text="${usuario.nombre}"></td>
-					<td data-th-text="${usuario.password}"></td>
-					<td data-th-text="${usuario.email}"></td>
-				</tr>
-			</tbody>
-		</table>
-		<br />
-		<a class="btn btn-info" href="nuevo">Nuevo Usuario</a>
+<div class="panel panel-info">
+	<div class="jumbotron text-center">
+		<h2>Lista de usuarios</h2>
 	</div>
+	<table class="table table-striped">
+		<thead>
+		<tr>
+			<th>ID</th>
+			<th>NOMBRE</th>
+			<th>NÚMERO TELEFÓNICO</th>
+			<th>CORREO ELECTRÓNICO</th>
+			<th>EDITAR</th>
+			<th>ELIMINAR</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr data-th-each="usuario:${usuarios}">
+			<td data-th-text="${usuario.id}"></td>
+			<td data-th-text="${usuario.nombre}"></td>
+			<td data-th-text="${usuario.password}"></td>
+			<td data-th-text="${usuario.email}"></td>
+			<td>
+				<a th:href="@{'/editar/{id}'(id=${usuario.id})}">
+					<p>EDITAR</p>
+				</a>
+			</td>
+			<td>
+				<a th:href="@{'/borrar/{id}'(id=${usuario.id})}">
+					<p>BORRAR</p>
+				</a>
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	<br />
+	<a class="btn btn-info" href="nuevo">Nuevo Usuario</a>
+</div>
 
 </body>
 </html>
